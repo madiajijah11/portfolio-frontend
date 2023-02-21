@@ -21,7 +21,7 @@ function About() {
         <span> Good Business</span>
       </h2>
       <div className="app__profiles">
-        {abouts.map((about) => (
+        {abouts.map((about: any) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -29,7 +29,7 @@ function About() {
             className="app__profile-item"
             key={`item-${about.title}`}
           >
-            <img src={urlFor(about.imgUrl)} alt={about.title} />
+            <img src={urlFor(about.imgUrl).url()} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
             </h2>

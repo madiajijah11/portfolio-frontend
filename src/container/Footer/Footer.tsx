@@ -14,7 +14,7 @@ function Footer() {
   const [loading, setLoading] = useState(false);
   const { username, email, message } = formData;
 
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };

@@ -8,7 +8,7 @@ import "./Testimonial.scss";
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState([]) as any;
   const [brands, setBrands] = useState([]);
 
   const handleClick = (index: any) => {
@@ -34,7 +34,7 @@ const Testimonial = () => {
         <>
           <div className="app__testimonial-item app__flex">
             <img
-              src={urlFor(testimonials[currentIndex].imgurl)}
+              src={urlFor(testimonials[currentIndex].imgurl).url()}
               alt={testimonials[currentIndex].name}
             />
             <div className="app__testimonial-content">
@@ -83,7 +83,7 @@ const Testimonial = () => {
             transition={{ duration: 0.5, type: "tween" }}
             key={brand._id}
           >
-            <img src={urlFor(brand?.imgUrl)} alt={brand.name} />
+            <img src={urlFor(brand?.imgUrl).url()} alt={brand.name} />
           </motion.div>
         ))}
       </div>

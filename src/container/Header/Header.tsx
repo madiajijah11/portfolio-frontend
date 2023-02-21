@@ -9,7 +9,7 @@ function Header() {
     whileInView: { scale: [0, 1] },
     opacity: [0, 1],
     transition: { duration: 1, ease: "easeInOut" },
-  };
+  } as any;
   return (
     <div className="app__header app__flex" id="home">
       <motion.div
