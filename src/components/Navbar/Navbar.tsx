@@ -23,11 +23,19 @@ function Navbar() {
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle && (
           <motion.div
+            initial={{ x: 300 }}
             whileInView={{ x: [300, 0] }}
             transition={{ duration: 0.85, ease: "easeInOut" }}
+            className="app__navbar-menu-links"
           >
             <HiX onClick={() => setToggle(false)} />
-            <ul></ul>
+            <ul className="app__navbar-links">
+              {["home", "about", "work", "skills", "contact"].map((item) => (
+                <li className="app__flex p-text" key={`link-${item}`}>
+                  <a href={`#${item}`}>{item}</a>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         )}
       </div>
